@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "403703320703",
+    "project_id": "textmessagingapp-711fe",
+    "storage_bucket": "textmessagingapp-711fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403703320703:android:d58968ba218d01edcd2f4a",
+        "android_client_info": {
+          "package_name": "com.example.textmessagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403703320703-0d7773v3oelnlua4nt6jh5al8jgmepqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgtWb3Ba2pVu2i1xO6jY5dSVf-Tqh0k-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403703320703-0d7773v3oelnlua4nt6jh5al8jgmepqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
