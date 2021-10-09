@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.textmessagingapp"
+        applicationId 'com.example.textmessagingapp'
         minSdk 19
         targetSdk 31
         versionCode 1
@@ -26,6 +26,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    compileSdkVersion 31
+    buildToolsVersion '31.0.0'
 }
 
 dependencies {
