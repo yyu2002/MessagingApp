@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        InitializeFields(); // initialize class fields
+        initializeFields(); // initialize class fields
 
         NeedNewAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         }); // when user clicks on link, send to register activity
     }
 
-    private void InitializeFields() {
+    private void initializeFields() {
         LoginButton = (Button) findViewById(R.id.login_button);
         PhoneLoginButton = (Button) findViewById(R.id.phone_login_button);
         UserEmail = (EditText) findViewById(R.id.login_email);
@@ -65,6 +64,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void sendUserToRegisterActivity() {
         Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(registerIntent); // send user to main activity if logged in already
+        startActivity(registerIntent); // send user to register activity if clickedcxcxçcvc
     }
 }
