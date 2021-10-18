@@ -1,11 +1,14 @@
 package com.example.textmessagingapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
@@ -55,5 +58,35 @@ public class MainActivity extends AppCompatActivity {
     private void sendUserToLoginActivity() {
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(loginIntent); // user must login if currentUser is null, sent to loginActivity
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu); // get options menu on top right corner
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        // if user selects logout option
+        if (item.getItemId() == R.id.main_logout_option) {
+            mAuth.signOut(); // sign out user
+            sendUserToLoginActivity(); // send user to login activity page when logged out
+        }
+
+        // if user selects settings option
+        if (item.getItemId() == R.id.main_settings_option) {
+
+        }
+
+        // if user selects find friends option
+        if (item.getItemId() == R.id.main_find_friends_option) {
+
+        }
+
+        return true;
     }
 }

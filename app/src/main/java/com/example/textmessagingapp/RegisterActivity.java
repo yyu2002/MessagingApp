@@ -88,7 +88,6 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
         } // create user
-
     }
 
     private void initializeFields() {
