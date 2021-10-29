@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -26,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView AlreadyHaveAccountLink; // already have account link
 
     private FirebaseAuth mAuth; // firebase authentication
+    private DatabaseReference rootRef; // root database reference
 
     private ProgressDialog loadingBar; // loading bar when creating account
 
@@ -34,7 +37,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance(); // initialize
+        rootRef = FirebaseDatabase.getInstance().getReference(); // initialize
 
         initializeFields(); // initialize class fields
 
@@ -76,6 +80,9 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                String currentUserID = mAuth.getCurrentUser().getUid(); // get current user ID
+                                rootRef.child("Users").child(currentUserID).setValue(""); // TODO: set value to null for now
+
                                 sendUserToMainActivity(); // send user to main page if account created successfully
                                 Toast.makeText(RegisterActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss(); // dismiss loading bar if account created successfully
