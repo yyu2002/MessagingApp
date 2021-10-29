@@ -22,7 +22,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseUser currentUser; // current user
     private FirebaseAuth mAuth; // firebase authorization
     private ProgressDialog loadingBar; // loading bar
 
@@ -40,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance(); // initialize firebase auth
-        currentUser = mAuth.getCurrentUser(); // get current user
 
         initializeFields(); // initialize class fields
 
@@ -107,23 +105,17 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
     }
 
-    @Override
-    protected void onStart() {  // check if user is already logged in;
-        super.onStart();        // if yes, send user to main activity
-
-        if (currentUser != null) { // authenticated
-            // send user to main activity if already logged in
-            sendUserToMainActivity();
-        }
-    }
-
     private void sendUserToMainActivity() {
-        Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(loginIntent); // send user to main activity if logged in already
+        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                Intent.FLAG_ACTIVITY_CLEAR_TASK); // user cannot go back if they press back button, must use logout button
+        startActivity(mainIntent); // send user to main activity when clicked
+        finish(); // close activity
     }
 
     private void sendUserToRegisterActivity() {
         Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(registerIntent); // send user to register activity if clickedcxcxçcvc
     }
+
 }
