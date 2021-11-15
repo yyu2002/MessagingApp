@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         // if user selects settings option
         if (item.getItemId() == R.id.main_settings_option) {
-
+            sendUserToSettingsActivity(); // send user to settings activity page
         }
 
         // if user selects find friends option
@@ -88,5 +88,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    private void sendUserToSettingsActivity() {
+        Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(settingsIntent); // send user to settings activity
     }
 }
