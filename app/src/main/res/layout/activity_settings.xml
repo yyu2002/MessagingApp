@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <!-- circle image view for profile pictures -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/set_profile_image"
         android:layout_width="250dp"
@@ -17,6 +18,7 @@
         app:civ_border_width="5dp"
         app:civ_border_color="@color/colorPrimary"/>
 
+    <!-- username edit text -->
     <EditText
         android:id="@+id/set_user_name"
         android:layout_width="match_parent"
@@ -34,6 +36,7 @@
         android:padding="6dp"
         android:layout_marginTop="10dp" />
 
+    <!-- set profile status edit text -->
     <EditText
         android:id="@+id/set_profile_status"
         android:layout_width="match_parent"
@@ -51,6 +54,7 @@
         android:padding="6dp"
         android:layout_marginTop="10dp" />
 
+    <!-- update account settings button -->
     <Button
         android:id="@+id/update_settings_button"
         android:layout_width="match_parent"
