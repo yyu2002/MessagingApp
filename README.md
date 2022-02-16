@@ -1,5 +1,2 @@
 # Text Messaging App
-
-Currently a work-in-progress of an Android messaging app that I'm working on as a personal project. Built in Java. Utilizes Firebase.
-
-The main functionalities will include chats, group chats, and contacts.
+Android messaging app that that allows user to login, sign up, logout, as well as perform direct messaging and group messaging. Users can store contacts as well.
